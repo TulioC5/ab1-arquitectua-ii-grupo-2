@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  # MySQL service
+  mysql-db:
+    image: mysql:8.0
+    restart: always
+    ports:
+      # port forwarding
+      # local machine port:container port 
+      - "5050:5050"
+    environment:
+      # ENV_NAME=ENV_VALUE 
+      - MYSQL_DATABASE=mysql
+      - MYSQL_USER=tcurup
+      - MYSQL_PASSWORD=32149680
+      - MYSQL_ROOT_PASSWORD=32149680
+
+# Uncomment the following lines to use volumes for persistent data storage
+
+#    volumes:
+#      - db-data:/var/lib/mysql
+
+# volumes:
+#   db-data:
+#     driver: local  
